@@ -4,7 +4,7 @@ A new Flutter project to demonstrate How to build a profile UI.
 
 ## Getting Started
 - Image:
--  ![Home Image](assets/home.jpg)
+-  ![Profile Image](assets/home.jpg)
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)

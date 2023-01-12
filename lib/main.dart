@@ -8,8 +8,18 @@ void main() {
   );
 }
 
-//short-cut is stless
-class Home extends StatelessWidget {
+//short-cut for StatelessWidget is "stless"
+
+//short-cut for StatefulWidget is "stful"
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+
+  int level = 0;
+
   @override
   Widget build(BuildContext context) {
     //Scaffold allows us to create a well layered app with appbar, body
@@ -63,7 +73,7 @@ class Home extends StatelessWidget {
             ),
             SizedBox(height: 10.0), //for placing a gap in between the fields.
             Text(
-              "Senior Developer",
+              "${level}",
               style: TextStyle(
                 color: Colors.amberAccent[200],
                 letterSpacing: 2.0,
@@ -100,6 +110,15 @@ class Home extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          setState(() {
+            level += 1;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.grey[700],
       ),
     );
   }
