@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() {
   runApp(
@@ -22,10 +23,13 @@ class _HomeState extends State<Quotelist> {
 
   @override
   Widget build(BuildContext context) {
-    List<String> quotes_list = [
-      "Be yourself, everyone else is already taken.",
-      "I have nothing else to declare except my genius.",
-      "The truth is rarely pure and never simple."
+    List<Quote> quotes_list = [
+      // "Be yourself, everyone else is already taken.",
+      // "I have nothing else to declare except my genius.",
+      // "The truth is rarely pure and never simple.",
+      Quote("Martin", "Be yourself, everyone else is already taken."),
+      Quote("Prof",  "I have nothing else to declare except my genius."),
+      Quote("Wainaina",  "The truth is rarely pure and never simple.")
     ];
 
     //Scaffold allows us to create a well layered app with appbar, body
@@ -38,7 +42,7 @@ class _HomeState extends State<Quotelist> {
       ),
       body: Column(
         children: quotes_list.map((quote)
-        => Text(quote) // "=>" is used as a return statement.
+        => Text("${quote.author}: ${quote.text}") // "=>" is used as a return statement.
         ).toList(),
       ),
     );
