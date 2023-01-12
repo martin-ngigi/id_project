@@ -42,7 +42,7 @@ class _HomeState extends State<Quotelist> {
       ),
       body: Column(
         children: quotes_list.map((quote)
-        => Text("${quote.author}: ${quote.text}") // "=>" is used as a return statement.
+        => Text("${quote.author}: ${quote.text}") // "=>" is used as a return statement
         ).toList(),
       ),
     );
