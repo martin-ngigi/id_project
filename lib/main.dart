@@ -32,6 +32,33 @@ class _HomeState extends State<Quotelist> {
       Quote("Wainaina",  "The truth is rarely pure and never simple.")
     ];
 
+    Widget quoteTemplate(quote){
+      return Card(
+        margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+        child: Column(
+          children: [
+            Text(
+              quote.text,
+              style: TextStyle(
+                fontSize: 15.0,
+                color: Colors.grey[600],
+                letterSpacing: 1.0,
+              ),
+            ),
+            SizedBox(height: 6,), // for spacing
+            Text(
+              quote.author,
+              style: TextStyle(
+                  fontSize: 18.0,
+                  color: Colors.grey[800],
+                  letterSpacing: 2.0,
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     //Scaffold allows us to create a well layered app with appbar, body
     return Scaffold(
       backgroundColor: Colors.grey[300],
@@ -40,10 +67,14 @@ class _HomeState extends State<Quotelist> {
         centerTitle: true,
         backgroundColor: Colors.green,
       ),
-      body: Column(
-        children: quotes_list.map((quote)
-        => Text("${quote.author}: ${quote.text}") // "=>" is used as a return statement
-        ).toList(),
+      body: Container(
+        padding: EdgeInsets.all(12.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,// stretch vertically.
+          children: quotes_list.map((quote)
+          => quoteTemplate(quote)// "=>" is used as a return statement
+          ).toList(),
+        ),
       ),
     );
   }
